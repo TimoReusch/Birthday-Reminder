@@ -7,19 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BBE4C7A270F97C00038C5DF /* BirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4C79270F97C00038C5DF /* BirthdayCell.swift */; };
 		4BC4055826F5453F002BA1FB /* Birthday_ReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4055726F5453F002BA1FB /* Birthday_ReminderApp.swift */; };
 		4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4055926F5453F002BA1FB /* ContentView.swift */; };
 		4BC4055C26F54540002BA1FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4055B26F54540002BA1FB /* Assets.xcassets */; };
 		4BC4055F26F54540002BA1FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4055E26F54540002BA1FB /* Preview Assets.xcassets */; };
+		4BC4056726F547C2002BA1FB /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056626F547C2002BA1FB /* Birthday.swift */; };
+		4BC4056926F548FC002BA1FB /* BirthdayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056826F548FC002BA1FB /* BirthdayStore.swift */; };
+		4BC4056B26F5499F002BA1FB /* BirthdayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */; };
+		4BC4056E26F6948B002BA1FB /* BirthdayDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056D26F6948B002BA1FB /* BirthdayDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BBE4C79270F97C00038C5DF /* BirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCell.swift; sourceTree = "<group>"; };
 		4BC4055426F5453F002BA1FB /* Birthday Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Birthday Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC4055726F5453F002BA1FB /* Birthday_ReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday_ReminderApp.swift; sourceTree = "<group>"; };
 		4BC4055926F5453F002BA1FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BC4055B26F54540002BA1FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC4055E26F54540002BA1FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4BC4056026F54540002BA1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC4056626F547C2002BA1FB /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
+		4BC4056826F548FC002BA1FB /* BirthdayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayStore.swift; sourceTree = "<group>"; };
+		4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDetail.swift; sourceTree = "<group>"; };
+		4BC4056C26F62C47002BA1FB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4BC4056D26F6948B002BA1FB /* BirthdayDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,9 +44,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BBE4C73270F96040038C5DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */,
+				4BBE4C79270F97C00038C5DF /* BirthdayCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4BBE4C74270F96170038C5DF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4BC4056626F547C2002BA1FB /* Birthday.swift */,
+				4BC4056826F548FC002BA1FB /* BirthdayStore.swift */,
+				4BC4056D26F6948B002BA1FB /* BirthdayDate.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		4BC4054B26F5453F002BA1FB = {
 			isa = PBXGroup;
 			children = (
+				4BC4056C26F62C47002BA1FB /* MyPlayground.playground */,
 				4BC4055626F5453F002BA1FB /* Birthday Reminder */,
 				4BC4055526F5453F002BA1FB /* Products */,
 			);
@@ -52,6 +83,8 @@
 		4BC4055626F5453F002BA1FB /* Birthday Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				4BBE4C74270F96170038C5DF /* Data */,
+				4BBE4C73270F96040038C5DF /* Views */,
 				4BC4055726F5453F002BA1FB /* Birthday_ReminderApp.swift */,
 				4BC4055926F5453F002BA1FB /* ContentView.swift */,
 				4BC4055B26F54540002BA1FB /* Assets.xcassets */,
@@ -139,7 +172,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */,
+				4BBE4C7A270F97C00038C5DF /* BirthdayCell.swift in Sources */,
 				4BC4055826F5453F002BA1FB /* Birthday_ReminderApp.swift in Sources */,
+				4BC4056926F548FC002BA1FB /* BirthdayStore.swift in Sources */,
+				4BC4056B26F5499F002BA1FB /* BirthdayDetail.swift in Sources */,
+				4BC4056E26F6948B002BA1FB /* BirthdayDate.swift in Sources */,
+				4BC4056726F547C2002BA1FB /* Birthday.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

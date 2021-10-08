@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Birthday_ReminderApp: App {
+    @StateObject private var store = BirthdayStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: store)
         }
     }
 }
