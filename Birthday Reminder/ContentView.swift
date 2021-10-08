@@ -32,6 +32,7 @@ struct ContentView: View {
                                     ToolbarItemPlacement .navigationBarTrailing){
                     Button(action: {
                         showingSheet.toggle()
+                        addBirthday()
                     }) {
                         Image(systemName: "plus")
                     }
@@ -53,7 +54,7 @@ struct ContentView: View {
     }
     
     func addBirthday() {
-        
+        self.store.birthdays.append(Birthday(name: "dennis", date: ""))
     }
     
     func moveBirthdays(from: IndexSet, to: Int) {
@@ -74,30 +75,15 @@ struct ContentView: View {
 struct AddBirthdaySheet: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var username: String = ""
-    @State private var dateChosen = Date()
-    
     var body: some View {
         NavigationView {
-            VStack{
-                Form {
-                    TextField("Name", text: $username)
-                    DatePicker(selection: $dateChosen, in: ...Date(), displayedComponents: .date) {
-                        Text("Birthday:")
-                    }
-                }
-            }
+            BirthdayFormNew()
             .navigationBarTitle(Text("Add Birthday"), displayMode: .inline)
             .navigationBarItems(
-                leading: Button(action:{
-                    dismiss()
-                }) {
-                    Text("Quit").bold()
-                },
                 trailing: Button(action: {
                 dismiss()
             }) {
-                Text("Save").bold()
+                Text("Cancel").bold()
             })
         }
     }
@@ -107,5 +93,6 @@ struct AddBirthdaySheet: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(store: testStore)
+            .preferredColorScheme(.light)
     }
 }

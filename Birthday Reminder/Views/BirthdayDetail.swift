@@ -10,11 +10,12 @@ import SwiftUI
 struct BirthdayDetail: View {
     
     let birthday: Birthday
+    @State private var username: String = ""
+    @State private var dateChosen: Date = Date()
+    
     
     var body: some View {
-        VStack{
-            Text("Test")
-        }
+        BirthdayFormEdit()
         .navigationTitle(birthday.name)
     }
 }
