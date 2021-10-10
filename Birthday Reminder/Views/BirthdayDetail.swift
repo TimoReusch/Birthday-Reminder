@@ -9,13 +9,34 @@ import SwiftUI
 
 struct BirthdayDetail: View {
     
-    let birthday: Birthday
-    @State private var username: String = ""
-    @State private var dateChosen: Date = Date()
     
+    var birthday: Birthday
+    @State private var name: String
+    @State private var date: Date
+    @State private var notes: String
+    
+    init(birthday: Birthday) {
+        self.birthday = birthday
+        self._name = State(initialValue: birthday.name)
+        self._date = State(initialValue: birthday.date)
+        self._notes = State(initialValue: birthday.notes)
+    }
     
     var body: some View {
-        BirthdayFormEdit()
+        Form{
+            TextField("Name", text: $name)
+            DatePicker("Birthday",
+                       selection: $date,
+                       displayedComponents: [.date])
+            Section(header: Text("Notes")){
+                TextEditor(text: $notes)
+            }
+            Section{
+                Button("Save"){
+                    //
+                }
+            }
+        }
         .navigationTitle(birthday.name)
     }
 }

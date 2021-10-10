@@ -10,11 +10,12 @@ import Foundation
 struct Birthday: Identifiable {
     var id = UUID()
     var name: String
-    var date: String
+    var date: Date
+    var notes: String = ""
 }
 
 let testData = [
-    Birthday(name: "Laura", date: BirthdayDate(day: 15, month: 2, year: 2000).getString()),
-    Birthday(name: "Timo", date: BirthdayDate(day: 14, month: 2, year: 2000).getString())
+    Birthday(name: "Laura", date: Date(), notes: "Chocolate"),
+    Birthday(name: "Timo", date: Date())
 ]
 

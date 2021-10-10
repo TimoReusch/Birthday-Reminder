@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var store: BirthdayStore
+    @ObservedObject var birthdayStore = BirthdayStore()
     @State private var showingSheet = false
     
     var body: some View {
         NavigationView{
             List{
-                ForEach(store.birthdays){ birthday in
+                ForEach(birthdayStore.birthdays){ birthday in
                     NavigationLink(destination: BirthdayDetail(birthday: birthday)){
                         BirthdayCell(birthday: birthday)
                     }
@@ -38,7 +38,7 @@ struct ContentView: View {
                     }
                     .sheet(isPresented: $showingSheet) {
                         if #available(iOS 15.0, *) {
-                            AddBirthdaySheet()
+                            AddBirthday(birthdayStore: birthdayStore)
                         } else {
                             // Fallback on earlier versions
                         }
@@ -54,45 +54,27 @@ struct ContentView: View {
     }
     
     func addBirthday() {
-        self.store.birthdays.append(Birthday(name: "dennis", date: ""))
+        //self.store.birthdays.append(Birthday(name: "dennis", date: ""))
     }
     
     func moveBirthdays(from: IndexSet, to: Int) {
         withAnimation {
-            store.birthdays.move(fromOffsets: from, toOffset: to)
+            birthdayStore.birthdays.move(fromOffsets: from, toOffset: to)
         }
     }
     
     func deleteBirthdays(offsets: IndexSet) {
         withAnimation {
-            store.birthdays.remove(atOffsets: offsets)
+            birthdayStore.birthdays.remove(atOffsets: offsets)
         }
     }
     
-}
-
-@available(iOS 15.0, *)
-struct AddBirthdaySheet: View {
-    @Environment(\.dismiss) var dismiss
-    
-    var body: some View {
-        NavigationView {
-            BirthdayFormNew()
-            .navigationBarTitle(Text("Add Birthday"), displayMode: .inline)
-            .navigationBarItems(
-                trailing: Button(action: {
-                dismiss()
-            }) {
-                Text("Cancel").bold()
-            })
-        }
-    }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(store: testStore)
+        ContentView(birthdayStore: testStore)
             .preferredColorScheme(.light)
     }
 }

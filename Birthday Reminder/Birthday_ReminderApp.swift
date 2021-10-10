@@ -13,7 +13,7 @@ struct Birthday_ReminderApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(store: store)
+            ContentView(birthdayStore: store)
         }
     }
 }
