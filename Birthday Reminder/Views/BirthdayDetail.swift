@@ -18,7 +18,10 @@ struct BirthdayDetail: View {
                        selection: $birthday.date,
                        displayedComponents: [.date])
             Section(header: Text("Notes")){
-                TextEditor(text: $birthday.notes)
+                ZStack {
+                    TextEditor(text: $birthday.notes)
+                    Text(birthday.notes).opacity(0).padding(.all, 8) // <- This will solve the issue if it is in the same ZStack
+                }
             }
         }
         .navigationTitle(birthday.name)

@@ -16,6 +16,8 @@
 		4BC4056B26F5499F002BA1FB /* BirthdayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */; };
 		4BC4056E26F6948B002BA1FB /* BirthdayDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056D26F6948B002BA1FB /* BirthdayDate.swift */; };
 		4BE6C8F3271218030040A34D /* AddBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6C8F2271218030040A34D /* AddBirthday.swift */; };
+		4BF23D152714EF72005D93DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF23D142714EF72005D93DC /* HomeView.swift */; };
+		4BF23D172714F09B005D93DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF23D162714F09B005D93DC /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDetail.swift; sourceTree = "<group>"; };
 		4BC4056D26F6948B002BA1FB /* BirthdayDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDate.swift; sourceTree = "<group>"; };
 		4BE6C8F2271218030040A34D /* AddBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthday.swift; sourceTree = "<group>"; };
+		4BF23D142714EF72005D93DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4BF23D162714F09B005D93DC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +52,8 @@
 			children = (
 				4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */,
 				4BE6C8F2271218030040A34D /* AddBirthday.swift */,
+				4BF23D142714EF72005D93DC /* HomeView.swift */,
+				4BF23D162714F09B005D93DC /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,8 +178,10 @@
 				4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */,
 				4BC4055826F5453F002BA1FB /* Birthday_ReminderApp.swift in Sources */,
 				4BC4056926F548FC002BA1FB /* BirthdayStore.swift in Sources */,
+				4BF23D172714F09B005D93DC /* SettingsView.swift in Sources */,
 				4BE6C8F3271218030040A34D /* AddBirthday.swift in Sources */,
 				4BC4056B26F5499F002BA1FB /* BirthdayDetail.swift in Sources */,
+				4BF23D152714EF72005D93DC /* HomeView.swift in Sources */,
 				4BC4056E26F6948B002BA1FB /* BirthdayDate.swift in Sources */,
 				4BC4056726F547C2002BA1FB /* Birthday.swift in Sources */,
 			);
