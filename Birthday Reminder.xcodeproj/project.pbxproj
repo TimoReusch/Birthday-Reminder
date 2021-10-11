@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BBE4C7A270F97C00038C5DF /* BirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE4C79270F97C00038C5DF /* BirthdayCell.swift */; };
 		4BC4055826F5453F002BA1FB /* Birthday_ReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4055726F5453F002BA1FB /* Birthday_ReminderApp.swift */; };
 		4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4055926F5453F002BA1FB /* ContentView.swift */; };
 		4BC4055C26F54540002BA1FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4055B26F54540002BA1FB /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4BBE4C79270F97C00038C5DF /* BirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCell.swift; sourceTree = "<group>"; };
 		4BC4055426F5453F002BA1FB /* Birthday Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Birthday Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC4055726F5453F002BA1FB /* Birthday_ReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday_ReminderApp.swift; sourceTree = "<group>"; };
 		4BC4055926F5453F002BA1FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */,
-				4BBE4C79270F97C00038C5DF /* BirthdayCell.swift */,
 				4BE6C8F2271218030040A34D /* AddBirthday.swift */,
 			);
 			path = Views;
@@ -173,7 +170,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */,
-				4BBE4C7A270F97C00038C5DF /* BirthdayCell.swift in Sources */,
 				4BC4055826F5453F002BA1FB /* Birthday_ReminderApp.swift in Sources */,
 				4BC4056926F548FC002BA1FB /* BirthdayStore.swift in Sources */,
 				4BE6C8F3271218030040A34D /* AddBirthday.swift in Sources */,

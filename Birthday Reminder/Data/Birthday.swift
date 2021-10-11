@@ -14,6 +14,13 @@ struct Birthday: Identifiable {
     var notes: String = ""
 }
 
+extension Birthday: Equatable {
+    static func == (lhs: Birthday, rhs: Birthday) -> Bool {
+        return
+            lhs.id == rhs.id
+    }
+}
+
 let testData = [
     Birthday(name: "Laura", date: Date(), notes: "Chocolate"),
     Birthday(name: "Timo", date: Date())

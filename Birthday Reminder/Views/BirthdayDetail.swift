@@ -9,31 +9,28 @@ import SwiftUI
 
 struct BirthdayDetail: View {
     
-    
-    var birthday: Birthday
-    @State private var name: String
-    @State private var date: Date
-    @State private var notes: String
-    
-    init(birthday: Birthday) {
-        self.birthday = birthday
-        self._name = State(initialValue: birthday.name)
-        self._date = State(initialValue: birthday.date)
-        self._notes = State(initialValue: birthday.notes)
-    }
+    @Binding var birthday: Birthday
     
     var body: some View {
         Form{
-            TextField("Name", text: $name)
+            TextField("Name", text: $birthday.name)
             DatePicker("Birthday",
-                       selection: $date,
+                       selection: $birthday.date,
                        displayedComponents: [.date])
             Section(header: Text("Notes")){
-                TextEditor(text: $notes)
+                TextEditor(text: $birthday.notes)
             }
             Section{
                 Button("Save"){
-                    //
+                    if(!birthday.name.elementsEqual(self.birthday.name)){
+                        birthday.name = self.birthday.name
+                    }
+                    if(birthday.date != self.birthday.date){
+                        birthday.date = self.birthday.date
+                    }
+                    if(!birthday.notes.elementsEqual(self.birthday.notes)){
+                        birthday.notes = self.birthday.notes
+                    }
                 }
             }
         }
@@ -42,9 +39,10 @@ struct BirthdayDetail: View {
 }
 
 struct BirthdayDetail_Previews: PreviewProvider {
+    
     static var previews: some View {
         NavigationView{
-            BirthdayDetail(birthday: testData[0])
+            BirthdayDetail(birthday: .constant(Birthday(name: "Laura", date: Date())))
         }
     }
 }

@@ -15,8 +15,13 @@ struct ContentView: View {
         NavigationView{
             List{
                 ForEach(birthdayStore.birthdays){ birthday in
-                    NavigationLink(destination: BirthdayDetail(birthday: birthday)){
-                        BirthdayCell(birthday: birthday)
+                    NavigationLink(destination: BirthdayDetail(birthday: self.$birthdayStore.birthdays[self.birthdayStore.birthdays.firstIndex(of: birthday)!])){
+                        VStack(alignment: .leading){
+                            Text(birthday.name)
+                            Text("\(Image(systemName: "gift")) \(birthday.date)")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
                 .onDelete(perform: deleteBirthdays)
