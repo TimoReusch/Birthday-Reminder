@@ -10,21 +10,41 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var birthdayStore = BirthdayStore()
     @State private var showingSheet = false
+    @State private var searchText: String = ""
+    
+    var filteredBirthdays: [Birthday]{
+        if (searchText == ""){
+            return birthdayStore.birthdays
+        }
+        let filtered = birthdayStore.birthdays.filter {
+            $0.name.lowercased().contains(searchText.lowercased())
+        }
+        if(!filtered.isEmpty){
+            return filtered
+        } else {
+            return birthdayStore.birthdays
+        }
+    }
     
     var body: some View {
         NavigationView{
             List{
-                ForEach(birthdayStore.birthdays){ birthday in
-                    NavigationLink(destination: BirthdayDetail(birthday: self.$birthdayStore.birthdays[self.birthdayStore.birthdays.firstIndex(of: birthday)!])){
-                        VStack(alignment: .leading){
-                            Text(birthday.name)
-                            Text("\(Image(systemName: "gift")) \(birthday.date)")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
+                if #available(iOS 15.0, *) {
+                    ForEach(filteredBirthdays){ birthday in
+                        NavigationLink(destination: BirthdayDetail(birthday: self.$birthdayStore.birthdays[self.birthdayStore.birthdays.firstIndex(of: birthday)!])){
+                            VStack(alignment: .leading){
+                                Text(birthday.name)
+                                Text("\(Image(systemName: "gift")) \(birthday.date)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
                         }
+                        .searchable(text: $searchText)
                     }
+                    .onDelete(perform: deleteBirthdays)
+                } else {
+                    // Fallback on earlier versions
                 }
-                .onDelete(perform: deleteBirthdays)
             }
             .navigationTitle("Birthdays")
             
@@ -80,6 +100,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(birthdayStore: testStore)
-            .preferredColorScheme(.light)
+            .preferredColorScheme(.dark)
     }
 }
