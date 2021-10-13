@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BBE071727176B8E003AE083 /* BirthdayDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE071627176B8E003AE083 /* BirthdayDateFormatter.swift */; };
+		4BBE071927176D48003AE083 /* daysTillBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE071827176D48003AE083 /* daysTillBirthday.swift */; };
+		4BBE071B27176F9E003AE083 /* isBirthdayToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE071A27176F9E003AE083 /* isBirthdayToday.swift */; };
 		4BC4055826F5453F002BA1FB /* Birthday_ReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4055726F5453F002BA1FB /* Birthday_ReminderApp.swift */; };
 		4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4055926F5453F002BA1FB /* ContentView.swift */; };
 		4BC4055C26F54540002BA1FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4055B26F54540002BA1FB /* Assets.xcassets */; };
@@ -14,13 +17,15 @@
 		4BC4056726F547C2002BA1FB /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056626F547C2002BA1FB /* Birthday.swift */; };
 		4BC4056926F548FC002BA1FB /* BirthdayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056826F548FC002BA1FB /* BirthdayStore.swift */; };
 		4BC4056B26F5499F002BA1FB /* BirthdayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */; };
-		4BC4056E26F6948B002BA1FB /* BirthdayDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056D26F6948B002BA1FB /* BirthdayDate.swift */; };
 		4BE6C8F3271218030040A34D /* AddBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6C8F2271218030040A34D /* AddBirthday.swift */; };
 		4BF23D152714EF72005D93DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF23D142714EF72005D93DC /* HomeView.swift */; };
 		4BF23D172714F09B005D93DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF23D162714F09B005D93DC /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BBE071627176B8E003AE083 /* BirthdayDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDateFormatter.swift; sourceTree = "<group>"; };
+		4BBE071827176D48003AE083 /* daysTillBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daysTillBirthday.swift; sourceTree = "<group>"; };
+		4BBE071A27176F9E003AE083 /* isBirthdayToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isBirthdayToday.swift; sourceTree = "<group>"; };
 		4BC4055426F5453F002BA1FB /* Birthday Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Birthday Reminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC4055726F5453F002BA1FB /* Birthday_ReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday_ReminderApp.swift; sourceTree = "<group>"; };
 		4BC4055926F5453F002BA1FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,7 +35,6 @@
 		4BC4056626F547C2002BA1FB /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
 		4BC4056826F548FC002BA1FB /* BirthdayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayStore.swift; sourceTree = "<group>"; };
 		4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDetail.swift; sourceTree = "<group>"; };
-		4BC4056D26F6948B002BA1FB /* BirthdayDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDate.swift; sourceTree = "<group>"; };
 		4BE6C8F2271218030040A34D /* AddBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthday.swift; sourceTree = "<group>"; };
 		4BF23D142714EF72005D93DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4BF23D162714F09B005D93DC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B8840A127177B5500422000 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				4BBE071627176B8E003AE083 /* BirthdayDateFormatter.swift */,
+				4BBE071827176D48003AE083 /* daysTillBirthday.swift */,
+				4BBE071A27176F9E003AE083 /* isBirthdayToday.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		4BBE4C73270F96040038C5DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +75,9 @@
 		4BBE4C74270F96170038C5DF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4B8840A127177B5500422000 /* Date */,
 				4BC4056626F547C2002BA1FB /* Birthday.swift */,
 				4BC4056826F548FC002BA1FB /* BirthdayStore.swift */,
-				4BC4056D26F6948B002BA1FB /* BirthdayDate.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -176,13 +190,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */,
+				4BBE071727176B8E003AE083 /* BirthdayDateFormatter.swift in Sources */,
 				4BC4055826F5453F002BA1FB /* Birthday_ReminderApp.swift in Sources */,
 				4BC4056926F548FC002BA1FB /* BirthdayStore.swift in Sources */,
 				4BF23D172714F09B005D93DC /* SettingsView.swift in Sources */,
 				4BE6C8F3271218030040A34D /* AddBirthday.swift in Sources */,
 				4BC4056B26F5499F002BA1FB /* BirthdayDetail.swift in Sources */,
 				4BF23D152714EF72005D93DC /* HomeView.swift in Sources */,
-				4BC4056E26F6948B002BA1FB /* BirthdayDate.swift in Sources */,
+				4BBE071B27176F9E003AE083 /* isBirthdayToday.swift in Sources */,
+				4BBE071927176D48003AE083 /* daysTillBirthday.swift in Sources */,
 				4BC4056726F547C2002BA1FB /* Birthday.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
