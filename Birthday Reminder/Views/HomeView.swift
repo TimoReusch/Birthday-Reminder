@@ -35,9 +35,14 @@ struct HomeView: View{
                         NavigationLink(destination: BirthdayDetail(birthday: self.$birthdayStore.birthdays[self.birthdayStore.birthdays.firstIndex(of: birthday)!])){
                             VStack(alignment: .leading){
                                 Text(birthday.name)
-                                Text("\(Image(systemName: "gift")) \(birthday.date)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
+                                HStack{
+                                    Text("\(Image(systemName: "gift")) \( birthdayDateFormatter(date: birthday.date))")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                    Text("\(Image(systemName: "clock")) \( daysTillBirthday(date: birthday.date)) Days")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
                             }
                         }
                         .searchable(text: $searchText)
