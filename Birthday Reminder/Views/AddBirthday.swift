@@ -15,7 +15,7 @@ struct AddBirthday: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var name: String = ""
-    @State private var date: Date = Date()
+    @State private var date: Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
     
     var body: some View {
         NavigationView {
