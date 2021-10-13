@@ -7,14 +7,12 @@
 
 import Foundation
 
-struct Birthday: Identifiable {
+struct Birthday: Identifiable, Equatable {
     var id = UUID()
     var name: String
     var date: Date
     var notes: String = ""
-}
-
-extension Birthday: Equatable {
+    
     static func == (lhs: Birthday, rhs: Birthday) -> Bool {
         return
             lhs.id == rhs.id
