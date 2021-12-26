@@ -9,11 +9,12 @@ import SwiftUI
 
 @main
 struct Birthday_ReminderApp: App {
-    @StateObject private var store = BirthdayStore()
+    let persistenceContainer = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
-            ContentView(birthdayStore: store)
+            ContentView()
+                .environment(\.managedObjectContext, persistenceContainer.container.viewContext)
         }
     }
 }

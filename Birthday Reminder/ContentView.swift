@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    var birthdayStore = BirthdayStore()
+    
+    @State var shouldShowOnboarding = true
     
     var body: some View {
         TabView{
-            HomeView(birthdayStore: birthdayStore)
+            HomeView()
                 .tabItem{
                     Image(systemName: "house")
                     Text("Home")
@@ -23,11 +24,14 @@ struct ContentView: View {
                     Text("Settings")
                 }
         }
+        .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
+            OnboardingView(shouldShowOnboarding: $shouldShowOnboarding)
+        })
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(birthdayStore: testStore)
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

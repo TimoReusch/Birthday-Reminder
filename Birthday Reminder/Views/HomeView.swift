@@ -2,108 +2,107 @@
 //  HomeView.swift
 //  Birthday Reminder
 //
-//  Created by Timo Reusch on 12.10.21.
+//  Created by Timo Reusch on 23.12.21.
 //
 
 import SwiftUI
+import Lottie
 
-struct HomeView: View{
+struct HomeView: View {
+    @Environment(\.managedObjectContext) private var moc
     
-    @ObservedObject var birthdayStore = BirthdayStore()
-    @State private var showingSheet = false
-    @State private var searchText: String = ""
+    @FetchRequest(entity: Birthday.entity(), sortDescriptors: [ NSSortDescriptor(key: "name", ascending: true) ])
+    private var birthdays: FetchedResults<Birthday>
     
-    var filteredBirthdays: [Birthday]{
-        if (searchText == ""){
-            return birthdayStore.birthdays
-        }
-        let filtered = birthdayStore.birthdays.filter {
-            $0.name.lowercased().contains(searchText.lowercased())
-        }
-        if(!filtered.isEmpty){
-            return filtered
-        } else {
-            return birthdayStore.birthdays
-        }
-    }
+    @State private var showingAddBirthday = false
     
-    var body: some View{
-        NavigationView{
-            List{
-                if #available(iOS 15.0, *) {
-                    ForEach(filteredBirthdays){ birthday in
-                        NavigationLink(destination: BirthdayDetail(birthday: self.$birthdayStore.birthdays[self.birthdayStore.birthdays.firstIndex(of: birthday)!])){
-                            VStack(alignment: .leading){
-                                Text(birthday.name)
-                                HStack{
-                                    Text("\(Image(systemName: "gift")) \( birthdayDateFormatter(date: birthday.date))")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                    Text("\(Image(systemName: "clock")) \( daysTillBirthday(date: birthday.date)) Days")
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
+    @State private var searchQuery: String = ""
+    
+    
+    var body: some View {
+        if #available(iOS 15.0, *) {
+            NavigationView{
+                VStack{
+                    if(birthdays.isEmpty){
+                        VStack{
+                            LottieView(filename: "birthdayAnimation", loop: true).frame(height: 300, alignment: .center)
+                            Text("Nothing here yet. Click on the \"\(Image(systemName: "plus"))\" to add a birthday.")
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
+                    } else{
+                        List {
+                            ForEach(birthdays, id: \.self) { currentBirthday in
+                                NavigationLink(destination: BirthdayDetailView(name: currentBirthday.name ?? "", date: currentBirthday.date ?? Date(), notes: currentBirthday.notes ?? "")){
+                                    VStack(alignment: .leading){
+                                        Text(currentBirthday.name ?? "No name")
+                                        if(isBirthdayToday(date: currentBirthday.date!)){
+                                            Text("has his/her special day today! 🥳")
+                                                .font(.subheadline)
+                                                .foregroundColor(.red)
+                                        }
+                                            HStack{
+                                                Text("\(Image(systemName: "gift")) \( birthdayDateFormatter(date: currentBirthday.date ?? Date()))")
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.secondary)
+                                                Text("\(Image(systemName: "clock")) \( daysTillBirthday(date: currentBirthday.date ?? Date())) Days")
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.secondary)
+                                            }
+                                        
+                                    }
                                 }
-                            }
+                            }.onDelete(perform: deleteBirthday)
                         }
-                        .searchable(text: $searchText)
                     }
-                    .onDelete(perform: deleteBirthdays)
-                } else {
-                    // Fallback on earlier versions
                 }
-            }
-            .navigationTitle("Birthdays")
-            
-            .toolbar{
-                ToolbarItemGroup(placement:
-                                    ToolbarItemPlacement .navigationBarLeading){
-                    EditButton()
-                }
-                ToolbarItemGroup(placement:
-                                    ToolbarItemPlacement .navigationBarTrailing){
-                    Button(action: {
-                        showingSheet.toggle()
-                        addBirthday()
-                    }) {
+                .navigationTitle("Birthdays")
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing: Button(action: {
+                        self.showingAddBirthday.toggle()
+                    }, label: {
                         Image(systemName: "plus")
-                    }
-                    .sheet(isPresented: $showingSheet) {
-                        if #available(iOS 15.0, *) {
-                            AddBirthday(birthdayStore: birthdayStore)
-                        } else {
-                            // Fallback on earlier versions
-                        }
-                    }
+                    }))
+                .sheet(isPresented: $showingAddBirthday) {
+                    AddBirthdayView().environment(\.managedObjectContext, self.moc)
                 }
-                
             }
-            // Only shown on iPad and macOS
-            Text("Select a birthday")
-                .font(.largeTitle)
-                .foregroundColor(.secondary)
+            .searchable(text: $searchQuery, prompt: "Search for name")
+            .onChange(of: searchQuery) { newValue in
+                birthdays.nsPredicate = searchPredicate(query: newValue)
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
     
-    func addBirthday() {
-        //self.store.birthdays.append(Birthday(name: "dennis", date: ""))
+    private func searchPredicate(query: String) -> NSPredicate? {
+        if query.isEmpty { return nil }
+        return NSPredicate(format: "%K BEGINSWITH[cd] %@",
+                           #keyPath(Birthday.name), query)
     }
-    
-    func moveBirthdays(from: IndexSet, to: Int) {
-        withAnimation {
-            birthdayStore.birthdays.move(fromOffsets: from, toOffset: to)
-        }
-    }
-    
-    func deleteBirthdays(offsets: IndexSet) {
-        withAnimation {
-            birthdayStore.birthdays.remove(atOffsets: offsets)
-        }
-    }
-}
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView(birthdayStore: testStore)
-            .preferredColorScheme(.dark)
+    private func deleteBirthday(offsets: IndexSet){
+        withAnimation{
+            offsets.map { birthdays[$0] }.forEach(moc.delete)
+            saveContext()
+        }
+    }
+
+    private func updateBirthday(_ birthday: FetchedResults<Birthday>.Element){
+        withAnimation{
+            // Code here
+            saveContext()
+        }
+    }
+
+    private func saveContext(){
+        do{
+            try moc.save()
+        } catch {
+            let error = error as NSError
+            fatalError("Unresolved Error while saving: \(error)")
+        }
     }
 }

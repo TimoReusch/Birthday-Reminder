@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1820AC2777B89300882736 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1820AB2777B89300882736 /* Lottie */; };
+		4B1820AE2777B8DE00882736 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1820AD2777B8DE00882736 /* LottieView.swift */; };
+		4B1820B02777BD5700882736 /* birthdayAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B1820AF2777BD5700882736 /* birthdayAnimation.json */; };
+		4B1820B42777E9AF00882736 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1820B32777E9AF00882736 /* OnboardingView.swift */; };
+		4B1820B62777F46900882736 /* dataPrivacyAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B1820B52777F46900882736 /* dataPrivacyAnimation.json */; };
+		4B1820B82777F6D200882736 /* notificationAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B1820B72777F6D200882736 /* notificationAnimation.json */; };
+		4B3E6E6B2773F882006C60D0 /* birthdayModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E6E692773F882006C60D0 /* birthdayModel.xcdatamodeld */; };
+		4B3E6E6D2773F8C7006C60D0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E6E6C2773F8C7006C60D0 /* Persistence.swift */; };
+		4B3E6E712774025E006C60D0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E6E702774025E006C60D0 /* HomeView.swift */; };
+		4B3E6E732774072C006C60D0 /* BirthdayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3E6E722774072C006C60D0 /* BirthdayDetailView.swift */; };
 		4BBE071727176B8E003AE083 /* BirthdayDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE071627176B8E003AE083 /* BirthdayDateFormatter.swift */; };
 		4BBE071927176D48003AE083 /* daysTillBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE071827176D48003AE083 /* daysTillBirthday.swift */; };
 		4BBE071B27176F9E003AE083 /* isBirthdayToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE071A27176F9E003AE083 /* isBirthdayToday.swift */; };
@@ -14,15 +24,24 @@
 		4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4055926F5453F002BA1FB /* ContentView.swift */; };
 		4BC4055C26F54540002BA1FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4055B26F54540002BA1FB /* Assets.xcassets */; };
 		4BC4055F26F54540002BA1FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4055E26F54540002BA1FB /* Preview Assets.xcassets */; };
-		4BC4056726F547C2002BA1FB /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056626F547C2002BA1FB /* Birthday.swift */; };
-		4BC4056926F548FC002BA1FB /* BirthdayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056826F548FC002BA1FB /* BirthdayStore.swift */; };
-		4BC4056B26F5499F002BA1FB /* BirthdayDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */; };
-		4BE6C8F3271218030040A34D /* AddBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6C8F2271218030040A34D /* AddBirthday.swift */; };
-		4BF23D152714EF72005D93DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF23D142714EF72005D93DC /* HomeView.swift */; };
+		4BE6C8F3271218030040A34D /* AddBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6C8F2271218030040A34D /* AddBirthdayView.swift */; };
 		4BF23D172714F09B005D93DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF23D162714F09B005D93DC /* SettingsView.swift */; };
+		4BF7C3FA2777644200794A54 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7C3F92777644200794A54 /* NSDateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B1820AD2777B8DE00882736 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		4B1820AF2777BD5700882736 /* birthdayAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = birthdayAnimation.json; sourceTree = "<group>"; };
+		4B1820B32777E9AF00882736 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		4B1820B52777F46900882736 /* dataPrivacyAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dataPrivacyAnimation.json; sourceTree = "<group>"; };
+		4B1820B72777F6D200882736 /* notificationAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notificationAnimation.json; sourceTree = "<group>"; };
+		4B3E6E1E2773EF81006C60D0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4B3E6E6A2773F882006C60D0 /* birthdayModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = birthdayModel.xcdatamodel; sourceTree = "<group>"; };
+		4B3E6E6C2773F8C7006C60D0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		4B3E6E702774025E006C60D0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4B3E6E722774072C006C60D0 /* BirthdayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDetailView.swift; sourceTree = "<group>"; };
+		4BBB01EF2777821B00BDCA13 /* lottie-ios-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "lottie-ios-master"; path = "../../../Downloads/lottie-ios-master"; sourceTree = "<group>"; };
+		4BBB01F02777823F00BDCA13 /* lottie-ios-master */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "lottie-ios-master"; path = "../../../Downloads/lottie-ios-master"; sourceTree = "<group>"; };
 		4BBE071627176B8E003AE083 /* BirthdayDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDateFormatter.swift; sourceTree = "<group>"; };
 		4BBE071827176D48003AE083 /* daysTillBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daysTillBirthday.swift; sourceTree = "<group>"; };
 		4BBE071A27176F9E003AE083 /* isBirthdayToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isBirthdayToday.swift; sourceTree = "<group>"; };
@@ -32,12 +51,9 @@
 		4BC4055B26F54540002BA1FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC4055E26F54540002BA1FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4BC4056026F54540002BA1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BC4056626F547C2002BA1FB /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
-		4BC4056826F548FC002BA1FB /* BirthdayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayStore.swift; sourceTree = "<group>"; };
-		4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayDetail.swift; sourceTree = "<group>"; };
-		4BE6C8F2271218030040A34D /* AddBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthday.swift; sourceTree = "<group>"; };
-		4BF23D142714EF72005D93DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4BE6C8F2271218030040A34D /* AddBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthdayView.swift; sourceTree = "<group>"; };
 		4BF23D162714F09B005D93DC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4BF7C3F92777644200794A54 /* NSDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +61,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1820AC2777B89300882736 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B1820B12777BD6900882736 /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				4B1820AD2777B8DE00882736 /* LottieView.swift */,
+				4B1820B72777F6D200882736 /* notificationAnimation.json */,
+				4B1820B52777F46900882736 /* dataPrivacyAnimation.json */,
+				4B1820AF2777BD5700882736 /* birthdayAnimation.json */,
+			);
+			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
+		4B1820B22777E98000882736 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				4B1820B32777E9AF00882736 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		4B3E6E1D2773EF81006C60D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B3E6E1E2773EF81006C60D0 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B8840A127177B5500422000 /* Date */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,13 +105,22 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		4BBB01EE2777821B00BDCA13 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4BBB01EF2777821B00BDCA13 /* lottie-ios-master */,
+				4BBB01F02777823F00BDCA13 /* lottie-ios-master */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		4BBE4C73270F96040038C5DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4BC4056A26F5499F002BA1FB /* BirthdayDetail.swift */,
-				4BE6C8F2271218030040A34D /* AddBirthday.swift */,
-				4BF23D142714EF72005D93DC /* HomeView.swift */,
+				4BE6C8F2271218030040A34D /* AddBirthdayView.swift */,
 				4BF23D162714F09B005D93DC /* SettingsView.swift */,
+				4B3E6E702774025E006C60D0 /* HomeView.swift */,
+				4B3E6E722774072C006C60D0 /* BirthdayDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -75,9 +128,10 @@
 		4BBE4C74270F96170038C5DF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				4BF7C3F92777644200794A54 /* NSDateExtension.swift */,
 				4B8840A127177B5500422000 /* Date */,
-				4BC4056626F547C2002BA1FB /* Birthday.swift */,
-				4BC4056826F548FC002BA1FB /* BirthdayStore.swift */,
+				4B3E6E692773F882006C60D0 /* birthdayModel.xcdatamodeld */,
+				4B3E6E6C2773F8C7006C60D0 /* Persistence.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -85,8 +139,10 @@
 		4BC4054B26F5453F002BA1FB = {
 			isa = PBXGroup;
 			children = (
+				4BBB01EE2777821B00BDCA13 /* Packages */,
 				4BC4055626F5453F002BA1FB /* Birthday Reminder */,
 				4BC4055526F5453F002BA1FB /* Products */,
+				4B3E6E1D2773EF81006C60D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +157,8 @@
 		4BC4055626F5453F002BA1FB /* Birthday Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				4B1820B22777E98000882736 /* Onboarding */,
+				4B1820B12777BD6900882736 /* LottieAnimations */,
 				4BBE4C74270F96170038C5DF /* Data */,
 				4BBE4C73270F96040038C5DF /* Views */,
 				4BC4055726F5453F002BA1FB /* Birthday_ReminderApp.swift */,
@@ -136,6 +194,9 @@
 			dependencies = (
 			);
 			name = "Birthday Reminder";
+			packageProductDependencies = (
+				4B1820AB2777B89300882736 /* Lottie */,
+			);
 			productName = "Birthday Reminder";
 			productReference = 4BC4055426F5453F002BA1FB /* Birthday Reminder.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +224,9 @@
 				Base,
 			);
 			mainGroup = 4BC4054B26F5453F002BA1FB;
+			packageReferences = (
+				4B1820AA2777B89300882736 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 4BC4055526F5453F002BA1FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,7 +241,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1820B62777F46900882736 /* dataPrivacyAnimation.json in Resources */,
 				4BC4055F26F54540002BA1FB /* Preview Assets.xcassets in Resources */,
+				4B1820B82777F6D200882736 /* notificationAnimation.json in Resources */,
+				4B1820B02777BD5700882736 /* birthdayAnimation.json in Resources */,
 				4BC4055C26F54540002BA1FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,17 +256,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BF7C3FA2777644200794A54 /* NSDateExtension.swift in Sources */,
 				4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */,
 				4BBE071727176B8E003AE083 /* BirthdayDateFormatter.swift in Sources */,
 				4BC4055826F5453F002BA1FB /* Birthday_ReminderApp.swift in Sources */,
-				4BC4056926F548FC002BA1FB /* BirthdayStore.swift in Sources */,
+				4B3E6E712774025E006C60D0 /* HomeView.swift in Sources */,
 				4BF23D172714F09B005D93DC /* SettingsView.swift in Sources */,
-				4BE6C8F3271218030040A34D /* AddBirthday.swift in Sources */,
-				4BC4056B26F5499F002BA1FB /* BirthdayDetail.swift in Sources */,
-				4BF23D152714EF72005D93DC /* HomeView.swift in Sources */,
+				4BE6C8F3271218030040A34D /* AddBirthdayView.swift in Sources */,
+				4B3E6E6D2773F8C7006C60D0 /* Persistence.swift in Sources */,
+				4B1820AE2777B8DE00882736 /* LottieView.swift in Sources */,
 				4BBE071B27176F9E003AE083 /* isBirthdayToday.swift in Sources */,
 				4BBE071927176D48003AE083 /* daysTillBirthday.swift in Sources */,
-				4BC4056726F547C2002BA1FB /* Birthday.swift in Sources */,
+				4B3E6E732774072C006C60D0 /* BirthdayDetailView.swift in Sources */,
+				4B3E6E6B2773F882006C60D0 /* birthdayModel.xcdatamodeld in Sources */,
+				4B1820B42777E9AF00882736 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Birthday Reminder/Preview Content\"";
 				DEVELOPMENT_TEAM = ZQ9QM5K92D;
@@ -337,6 +408,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.timo-reusch.Birthday-Reminder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -349,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Birthday Reminder/Preview Content\"";
 				DEVELOPMENT_TEAM = ZQ9QM5K92D;
@@ -359,6 +432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.timo-reusch.Birthday-Reminder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -388,6 +462,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B1820AA2777B89300882736 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B1820AB2777B89300882736 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B1820AA2777B89300882736 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4B3E6E692773F882006C60D0 /* birthdayModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4B3E6E6A2773F882006C60D0 /* birthdayModel.xcdatamodel */,
+			);
+			currentVersion = 4B3E6E6A2773F882006C60D0 /* birthdayModel.xcdatamodel */;
+			path = birthdayModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4BC4054C26F5453F002BA1FB /* Project object */;
 }
