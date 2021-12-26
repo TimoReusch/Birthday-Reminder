@@ -9,6 +9,6 @@ import Foundation
 
 func birthdayDateFormatter(date: Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "d MMM yyyy"
+    dateFormatter.dateFormat = "d. MMM yyyy"
     return dateFormatter.string(from: date)
 }

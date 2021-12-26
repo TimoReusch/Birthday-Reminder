@@ -7,7 +7,7 @@
 
 import Foundation
 
-func isBirthdayToday(date: Date) -> String{
+func isBirthdayToday(date: Date) -> Bool{
     let calendar = Calendar.current
     let today = Date()
     
@@ -20,7 +20,7 @@ func isBirthdayToday(date: Date) -> String{
     let isSameDay = dateComponents.day == todayComponents.day
     
     if((isSameMonth && isSameDay) == true){
-        return "True"
+        return true
     }
-    return "False"
+    return false
 }
