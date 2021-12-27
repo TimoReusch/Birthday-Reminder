@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var shouldShowOnboarding = true
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding = true
     
     var body: some View {
         TabView{

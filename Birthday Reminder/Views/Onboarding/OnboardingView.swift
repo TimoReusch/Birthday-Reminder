@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct OnboardingView: View {
     @Binding var shouldShowOnboarding: Bool
@@ -66,7 +67,7 @@ struct OnboardingView: View {
                     .padding()
                 if #available(iOS 15.0, *) {
                     Button("Allow notifications"){
-                        // Notification
+                        NotificationManager.instance.requestAuthorization()
                         shouldShowOnboarding.toggle()
                     }
                     .buttonStyle(.borderedProminent)

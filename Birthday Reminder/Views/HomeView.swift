@@ -85,7 +85,10 @@ struct HomeView: View {
 
     private func deleteBirthday(offsets: IndexSet){
         withAnimation{
-            offsets.map { birthdays[$0] }.forEach(moc.delete)
+            offsets.forEach{ (i) in
+                NotificationManager.instance.removeNotification(identifier: birthdays[i].identifier!)
+                moc.delete(birthdays[i])
+            }
             saveContext()
         }
     }

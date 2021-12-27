@@ -28,10 +28,14 @@ struct AddBirthdayView: View {
                            displayedComponents: [.date])
                 Section {
                     Button("Save") {
+                        // Save the object
                         if self.name.isEmpty {
+                            // Show alert, if the name is empty
                             self.showingAlert = true
                         } else {
                             let birthday = Birthday(context: self.moc)
+                            
+                            birthday.identifier = UUID()
                             
                             birthday.name = self.name
                             birthday.date = self.date
@@ -40,6 +44,9 @@ struct AddBirthdayView: View {
                                 try? self.moc.save()
                             }
                             
+                            NotificationManager.instance.scheduleBirthdayReminder(identifier: birthday.identifier!, name: self.name, date: self.date, debugging: false)
+                            
+                            // Dismiss modal
                             self.presentationMode.wrappedValue.dismiss()
                         }
                     }
