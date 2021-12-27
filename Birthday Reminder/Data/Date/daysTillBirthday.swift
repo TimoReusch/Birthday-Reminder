@@ -6,8 +6,23 @@
 //
 
 import Foundation
+import SwiftUI
 
 let calendar = Calendar.current
+
+func daysTillBirthdayExact(date: Date) -> Text{
+    let birthdayToday: Bool = isBirthdayToday(date: date)
+    let daysTillBirthday: Int = daysTillBirthday(date: date)
+    let image: Image = Image(systemName: "clock")
+    
+    if(birthdayToday == false && daysTillBirthday == 0){
+        return Text("\(image) Tomorrow 🎈")
+    } else if(birthdayToday == true && daysTillBirthday == 0){
+        return Text("\(image) Today 🥳").foregroundColor(.red)
+    }
+    
+    return Text("\(image) \(daysTillBirthday)")
+}
 
 func daysTillBirthday(date: Date) -> Int {
     let today: Date = Date()

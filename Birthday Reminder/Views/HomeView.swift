@@ -38,16 +38,11 @@ struct HomeView: View {
                                     NavigationLink(destination: BirthdayDetailView(name: currentBirthday.name ?? "", date: currentBirthday.date ?? Date(), notes: currentBirthday.notes ?? "")){
                                         VStack(alignment: .leading){
                                             Text(currentBirthday.name ?? "No name")
-                                            if(isBirthdayToday(date: currentBirthday.date!)){
-                                                Text("has his/her special day today! 🥳")
-                                                    .font(.subheadline)
-                                                    .foregroundColor(.red)
-                                            }
                                             HStack{
                                                 Text("\(Image(systemName: "gift")) \( birthdayDateFormatter(date: currentBirthday.date ?? Date()))")
                                                     .font(.subheadline)
                                                     .foregroundColor(.secondary)
-                                                Text("\(Image(systemName: "clock")) \( daysTillBirthday(date: currentBirthday.date ?? Date())) Days")
+                                                daysTillBirthdayExact(date: currentBirthday.date ?? Date())
                                                     .font(.subheadline)
                                                     .foregroundColor(.secondary)
                                             }
