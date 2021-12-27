@@ -12,18 +12,7 @@ struct ContentView: View {
     @AppStorage("shouldShowOnboarding") var shouldShowOnboarding = true
     
     var body: some View {
-        TabView{
-            HomeView()
-                .tabItem{
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-            SettingsView()
-                .tabItem{
-                    Image(systemName: "gear")
-                    Text("Settings")
-                }
-        }
+        HomeView()
         .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
             OnboardingView(shouldShowOnboarding: $shouldShowOnboarding)
         })

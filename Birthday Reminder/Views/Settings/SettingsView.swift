@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var test: String = ""
+    @Environment(\.managedObjectContext) private var moc
+    @Environment(\.presentationMode) var presentationMode
     
-    let destinations: [String] = ["Impressum"]
+    @State var showLegalScreen = false
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -24,7 +26,9 @@ struct SettingsView: View {
                 .listStyle(GroupedListStyle())
                 .environment(\.horizontalSizeClass, .regular)
                 
-                Button(action: {}
+                Button(action: {
+                    self.showLegalScreen.toggle()
+                }
                        , label: { Text("Legal")}
                 )
                     .buttonStyle(.plain)
@@ -34,7 +38,16 @@ struct SettingsView: View {
                     .padding(.bottom, 8)
                     .foregroundColor(Color.secondary)
             }
+            .sheet(isPresented: $showLegalScreen){
+                LegalView().environment(\.managedObjectContext, self.moc)
+            }
             .navigationTitle("Settings")
+            .navigationBarItems(
+                trailing: Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Cancel").bold()
+                })
             .background(Color("ColorFormBackground").edgesIgnoringSafeArea(.all))
         }
     }

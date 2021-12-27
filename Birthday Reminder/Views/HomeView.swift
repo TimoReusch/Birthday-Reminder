@@ -15,6 +15,7 @@ struct HomeView: View {
     private var birthdays: FetchedResults<Birthday>
     
     @State private var showingAddBirthday = false
+    @State private var showingSettings = false
     
     @State private var searchQuery: String = ""
     
@@ -22,25 +23,26 @@ struct HomeView: View {
     var body: some View {
         if #available(iOS 15.0, *) {
             NavigationView{
-                VStack{
-                    if(birthdays.isEmpty){
-                        VStack{
-                            LottieView(filename: "birthdayAnimation", loop: true).frame(height: 300, alignment: .center)
-                            Text("Nothing here yet. Click on the \"\(Image(systemName: "plus"))\" to add a birthday.")
-                                .foregroundColor(.secondary)
-                                .multilineTextAlignment(.center)
-                        }
-                    } else{
-                        List {
-                            ForEach(birthdays, id: \.self) { currentBirthday in
-                                NavigationLink(destination: BirthdayDetailView(name: currentBirthday.name ?? "", date: currentBirthday.date ?? Date(), notes: currentBirthday.notes ?? "")){
-                                    VStack(alignment: .leading){
-                                        Text(currentBirthday.name ?? "No name")
-                                        if(isBirthdayToday(date: currentBirthday.date!)){
-                                            Text("has his/her special day today! 🥳")
-                                                .font(.subheadline)
-                                                .foregroundColor(.red)
-                                        }
+                ZStack{
+                    VStack{
+                        if(birthdays.isEmpty){
+                            VStack{
+                                LottieView(filename: "birthdayAnimation", loop: true).frame(height: 300, alignment: .center)
+                                Text("Nothing here yet. Click on the \"\(Image(systemName: "plus"))\" to add a birthday.")
+                                    .foregroundColor(.secondary)
+                                    .multilineTextAlignment(.center)
+                            }
+                        } else{
+                            List {
+                                ForEach(birthdays, id: \.self) { currentBirthday in
+                                    NavigationLink(destination: BirthdayDetailView(name: currentBirthday.name ?? "", date: currentBirthday.date ?? Date(), notes: currentBirthday.notes ?? "")){
+                                        VStack(alignment: .leading){
+                                            Text(currentBirthday.name ?? "No name")
+                                            if(isBirthdayToday(date: currentBirthday.date!)){
+                                                Text("has his/her special day today! 🥳")
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.red)
+                                            }
                                             HStack{
                                                 Text("\(Image(systemName: "gift")) \( birthdayDateFormatter(date: currentBirthday.date ?? Date()))")
                                                     .font(.subheadline)
@@ -49,23 +51,45 @@ struct HomeView: View {
                                                     .font(.subheadline)
                                                     .foregroundColor(.secondary)
                                             }
-                                        
+                                            
+                                        }
                                     }
-                                }
-                            }.onDelete(perform: deleteBirthday)
+                                }.onDelete(perform: deleteBirthday)
+                            }
                         }
                     }
-                }
-                .navigationTitle("Birthdays")
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing: Button(action: {
-                        self.showingAddBirthday.toggle()
-                    }, label: {
-                        Image(systemName: "plus")
-                    }))
-                .sheet(isPresented: $showingAddBirthday) {
-                    AddBirthdayView().environment(\.managedObjectContext, self.moc)
+                    .navigationTitle("Birthdays")
+                    .navigationBarItems(
+                        leading: EditButton(),
+                        trailing: Button(action: {
+                            self.showingSettings.toggle()
+                        }, label: {
+                            Image(systemName: "gear")
+                        }))
+                    .sheet(isPresented: $showingSettings){
+                        SettingsView().environment(\.managedObjectContext, self.moc)
+                    }
+                    .sheet(isPresented: $showingAddBirthday) {
+                        AddBirthdayView().environment(\.managedObjectContext, self.moc)
+                    }
+                    VStack{
+                        Spacer()
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                self.showingAddBirthday.toggle()
+                            }, label: {
+                                Image(systemName: "plus")
+                                    .font(.title)
+                                    .frame(width: 60, height: 60)
+                                    .background(Color.blue)
+                                    .clipShape(Circle())
+                                    .foregroundColor(.white)
+                            })
+                                .padding()
+                                .shadow(radius: 2)
+                        }
+                    }
                 }
             }
             .searchable(text: $searchQuery, prompt: "Search for name")
@@ -82,7 +106,7 @@ struct HomeView: View {
         return NSPredicate(format: "%K BEGINSWITH[cd] %@",
                            #keyPath(Birthday.name), query)
     }
-
+    
     private func deleteBirthday(offsets: IndexSet){
         withAnimation{
             offsets.forEach{ (i) in
@@ -92,14 +116,14 @@ struct HomeView: View {
             saveContext()
         }
     }
-
+    
     private func updateBirthday(_ birthday: FetchedResults<Birthday>.Element){
         withAnimation{
             // Code here
             saveContext()
         }
     }
-
+    
     private func saveContext(){
         do{
             try moc.save()
