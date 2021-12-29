@@ -18,7 +18,7 @@ struct SettingsView: View {
             VStack{
                 Form{
                     Section(header: Text("For developers")){
-                        SettingsListItemText(title: "Version", color: Color.black, icon: "number", value: "1.0.0")
+                        SettingsListItemText(title: "Version", color: Color.black, icon: "number", value: "\(Bundle.main.appVersionShort)")
                         SettingsListItemWebsite(title: "GitHub", color: Color.black, icon: "chevron.left.forwardslash.chevron.right",  link: "https://github.com/TimoReusch/Birthday-Reminder")
                         SettingsListItemWebsite(title: "Report a bug", color: Color.black, icon: "ladybug.fill", link: "https://github.com/TimoReusch/Birthday-Reminder/issues/new")
                     }
@@ -51,11 +51,23 @@ struct SettingsView: View {
             .background(Color("ColorFormBackground").edgesIgnoringSafeArea(.all))
         }
     }
+
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
             .preferredColorScheme(.dark)
+    }
+}
+
+extension Bundle {
+    
+    public var appVersionShort: String {
+        if let result = infoDictionary?["CFBundleShortVersionString"] as? String {
+            return result
+        } else {
+            return "⚠️"
+        }
     }
 }
