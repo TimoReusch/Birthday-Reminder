@@ -11,8 +11,10 @@ struct LegalView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView{
             ScrollView{
+                Text("Impressum")
+                    .font(.title)
+                    .padding()
                 
                 Text(
 """
@@ -39,15 +41,6 @@ Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wi
 """)
                     .multilineTextAlignment(.leading)
                     .padding()
-            }
-            
-            .navigationTitle("Impressum")
-            .navigationBarItems(
-                trailing: Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Cancel").bold()
-                })
         }
     }
 }
