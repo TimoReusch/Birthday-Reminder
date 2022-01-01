@@ -14,13 +14,14 @@ struct SettingsView: View {
     @State var showLegalScreen = false
     
     var body: some View {
+        
         NavigationView{
             VStack{
                 Form{
-                    Section(header: Text("For developers")){
+                    Section(header: Text("For developers".localized())){
                         SettingsListItemText(title: "Version", color: Color.black, icon: "number", value: "\(Bundle.main.appVersionShort)")
                         SettingsListItemWebsite(title: "GitHub", color: Color.black, icon: "chevron.left.forwardslash.chevron.right",  link: "https://github.com/TimoReusch/Birthday-Reminder")
-                        SettingsListItemWebsite(title: "Report a bug", color: Color.black, icon: "ladybug.fill", link: "https://github.com/TimoReusch/Birthday-Reminder/issues/new")
+                        SettingsListItemWebsite(title: "Report a bug".localized(), color: Color.black, icon: "ladybug.fill", link: "https://github.com/TimoReusch/Birthday-Reminder/issues/new")
                     }
                 }
                 .listStyle(GroupedListStyle())
@@ -29,7 +30,7 @@ struct SettingsView: View {
                 Button(action: {
                     self.showLegalScreen.toggle()
                 }
-                       , label: { Text("Legal")}
+                       , label: { Text("Legal".localized())}
                 )
                     .buttonStyle(.plain)
                     .multilineTextAlignment(.center)
@@ -41,12 +42,12 @@ struct SettingsView: View {
             .sheet(isPresented: $showLegalScreen){
                 LegalView().environment(\.managedObjectContext, self.moc)
             }
-            .navigationTitle("Settings")
+            .navigationTitle("Settings".localized())
             .navigationBarItems(
                 trailing: Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Cancel").bold()
+                    Text("Cancel".localized()).bold()
                 })
             .background(Color("ColorFormBackground").edgesIgnoringSafeArea(.all))
         }

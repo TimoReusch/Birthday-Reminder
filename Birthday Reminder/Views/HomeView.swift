@@ -19,8 +19,8 @@ struct HomeView: View {
     
     @State private var searchQuery: String = ""
     
-    
     var body: some View {
+        
         if #available(iOS 15.0, *) {
             NavigationView{
                 ZStack{
@@ -28,9 +28,10 @@ struct HomeView: View {
                         if(birthdays.isEmpty){
                             VStack{
                                 LottieView(filename: "birthdayAnimation", loop: true).frame(height: 300, alignment: .center)
-                                Text("Nothing here yet. Click on the \"\(Image(systemName: "plus"))\" to add a birthday.")
+                                Text("Bitte wähle einen Geburtstag aus der Navigationsleiste aus".localized())
                                     .foregroundColor(.secondary)
                                     .multilineTextAlignment(.center)
+                                    .padding()
                             }
                         } else{
                             List {
@@ -86,8 +87,12 @@ struct HomeView: View {
                         }
                     }
                 }
+                // Only shown on iPad and macOS
+                Text("Please select a birthday from the navigation bar".localized())
+                    .font(.title)
+                    .foregroundColor(.secondary)
             }
-            .searchable(text: $searchQuery, prompt: "Search for name")
+            .searchable(text: $searchQuery, prompt: "Search for name".localized())
             .onChange(of: searchQuery) { newValue in
                 birthdays.nsPredicate = searchPredicate(query: newValue)
             }

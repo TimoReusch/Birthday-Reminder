@@ -23,11 +23,11 @@ struct AddBirthdayView: View {
         NavigationView {
             Form{
                 TextField("Name", text: $name)
-                DatePicker("Birthday",
+                DatePicker("Birthday".localized(),
                            selection: $date,
                            displayedComponents: [.date])
                 Section {
-                    Button("Save") {
+                    Button("Save".localized()) {
                         // Save the object
                         if self.name.isEmpty {
                             // Show alert, if the name is empty
@@ -52,15 +52,15 @@ struct AddBirthdayView: View {
                     }
                 }
             }
-                .navigationBarTitle(Text("Add Birthday"), displayMode: .inline)
+            .navigationBarTitle(Text("Add birthday".localized()), displayMode: .inline)
                 .navigationBarItems(
                     trailing: Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text("Cancel").bold()
+                        Text("Cancel".localized()).bold()
                     })
                 .alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Error Saving"), message: Text("Name can not be emtpy."), dismissButton: .default(Text("OK")))
+                    Alert(title: Text("Error saving".localized()), message: Text("Name can't be emtpy.".localized()), dismissButton: .default(Text("OK")))
                 }
             }
         }

@@ -21,7 +21,7 @@ struct BirthdayDetailView: View {
             DatePicker("Birthday",
                        selection: $date,
                        displayedComponents: [.date])
-            Section(header: Text("Notes")){
+            Section(header: Text("Notes".localized())){
                 ZStack {
                     TextEditor(text: $notes)
                     Text(notes).opacity(0).padding(.all, 8) // <- This will solve the issue if it is in the same ZStack

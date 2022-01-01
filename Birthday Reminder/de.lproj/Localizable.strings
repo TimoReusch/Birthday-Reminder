@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  Birthday Reminder
+
+  Created by Timo Reusch on 31.12.21.
+  
+*/
+
+"Nothing here yet. Click on the \"+\" to add a birthday." = "Noch keine Geburtstage gespeichert. Klicke auf \"+\", um einen neuen hinzuzufügen.";
+"Please select a birthday from the navigation bar" = "Bitte wähle einen Geburtstag aus der Navigationsleiste aus";
+"Search for name" = "Nach Namen suchen";
+"Cancel" = "Abbrechen";
+"Settings" = "Einstellungen";
+"Birthday" = "Geburtstag";
+"Add birthday" = "Geburtstag hinzufügen";
+"Error saving" = "Fehler beim Speichern";
+"Name can't be emtpy." = "Name darf nicht leer sein.";
+"save" = "Speichern";
+"Legal" = "Impressum";
+"For developers" = "Für Entwickler";
+"Report a bug" = "Einen Fehler melden";
+"Notifications" = "Benachrichtigungen";
+"Today" = "Heute";
+"Tomorrow" = "Morgen";
+"Days" = "Tage";
+"Notes" = "Notizen";
+
+
+"So great to meet you!" = "Freut uns, dich kennenzulernen!";
+"Birthday Reminder helps you to never forget a birthday again - store all your friends most important day in one place with ease. Plus, there is also room for present ideas." = "Birthday Reminder hilft dir, nie mehr einen Geburtstag zu vergessen - speichere den besonderen Tag all deiner Freunde einfach ab und erhalte eine Benachrichtigung, wenn es soweit ist. Außerdem gibt es die Möglichkeit, Geschenkideen direkt mit einzutragen.";
+
+"Yours is yours." = "Deine Daten sind deine.";
+"Data Privacy" = "Datenschutz";
+"We do not have access to your data at any time. Everything is stored on your own device, and should you ever loose it or switch to a new one - a backup is automatically created in your iCloud. This also allows you to use the app on all your Apple-Devices." = "Wir haben keinen Zugriff auf deine persönlichen Daten. Alles wird lokal auf deinem Gerät gespeichert - solltest du es jemals verlieren, haben wir automatisch ein Backup in deiner iCloud angelegt. Das erlaubt dir auch, die App auf all deinen Apple Geräten zu nutzen.";
+
+"We will remind you!" = "Wir erinnern dich!";
+"To remind you of your friends birthdays, we would like to send you notifications. Just click on the button below." = "Um dich an die abgespeicherten Geburtstage zu erinnern, würden wir dir gerne Benachrichtigungen senden. Klick dazu einfach auf den Button unten.";
+"Allow notifications" = "Benachrichtigungen erlauben";
+"Nah, don't want any notifications" = "Ich möchte lieber keine Benachrichtigungen erhalten.";

@@ -11,17 +11,22 @@ import SwiftUI
 let calendar = Calendar.current
 
 func daysTillBirthdayExact(date: Date) -> Text{
+    
+    let today: String = "Today".localized();
+    let tomorrow: String = "Tomorrow".localized();
+    let days: String = "Days".localized();
+    
     let birthdayToday: Bool = isBirthdayToday(date: date)
     let daysTillBirthday: Int = daysTillBirthday(date: date)
     let image: Image = Image(systemName: "clock")
     
     if(birthdayToday == false && daysTillBirthday == 0){
-        return Text("\(image) Tomorrow 🎈")
+        return Text("\(image) \(tomorrow) 🎈")
     } else if(birthdayToday == true && daysTillBirthday == 0){
-        return Text("\(image) Today 🥳").foregroundColor(.red)
+        return Text("\(image) \(today) 🥳").foregroundColor(.red)
     }
     
-    return Text("\(image) \(daysTillBirthday)")
+    return Text("\(image) \(daysTillBirthday) \(days)")
 }
 
 func daysTillBirthday(date: Date) -> Int {

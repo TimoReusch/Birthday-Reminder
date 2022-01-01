@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B10FF14277FE3F5003889B9 /* LocalizationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10FF13277FE3F5003889B9 /* LocalizationExtension.swift */; };
 		4B1820AC2777B89300882736 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1820AB2777B89300882736 /* Lottie */; };
 		4B1820AE2777B8DE00882736 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1820AD2777B8DE00882736 /* LottieView.swift */; };
 		4B1820B02777BD5700882736 /* birthdayAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B1820AF2777BD5700882736 /* birthdayAnimation.json */; };
@@ -25,6 +26,7 @@
 		4BC4055A26F5453F002BA1FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4055926F5453F002BA1FB /* ContentView.swift */; };
 		4BC4055C26F54540002BA1FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4055B26F54540002BA1FB /* Assets.xcassets */; };
 		4BC4055F26F54540002BA1FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4055E26F54540002BA1FB /* Preview Assets.xcassets */; };
+		4BC6BB44277F9B3300F2231E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6BB46277F9B3300F2231E /* Localizable.strings */; };
 		4BE33F8E27792FB500184B29 /* SettingsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE33F8D27792FB500184B29 /* SettingsListItemView.swift */; };
 		4BE33F99277948A500184B29 /* LegalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE33F98277948A500184B29 /* LegalView.swift */; };
 		4BE6C8F3271218030040A34D /* AddBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6C8F2271218030040A34D /* AddBirthdayView.swift */; };
@@ -33,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B10FF13277FE3F5003889B9 /* LocalizationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationExtension.swift; sourceTree = "<group>"; };
 		4B1820AD2777B8DE00882736 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		4B1820AF2777BD5700882736 /* birthdayAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = birthdayAnimation.json; sourceTree = "<group>"; };
 		4B1820B32777E9AF00882736 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -53,6 +56,8 @@
 		4BC4055B26F54540002BA1FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC4055E26F54540002BA1FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4BC4056026F54540002BA1FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC6BB45277F9B3300F2231E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BC6BB47277F9B3500F2231E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4BE33F8D27792FB500184B29 /* SettingsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItemView.swift; sourceTree = "<group>"; };
 		4BE33F98277948A500184B29 /* LegalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalView.swift; sourceTree = "<group>"; };
 		4BE6C8F2271218030040A34D /* AddBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthdayView.swift; sourceTree = "<group>"; };
@@ -136,6 +141,7 @@
 			children = (
 				4B3B096427790B7D006962D4 /* Persistence */,
 				4B8840A127177B5500422000 /* Date */,
+				4B10FF13277FE3F5003889B9 /* LocalizationExtension.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 		4BC4055626F5453F002BA1FB /* Birthday Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				4BC6BB46277F9B3300F2231E /* Localizable.strings */,
 				4BBE4C73270F96040038C5DF /* Views */,
 				4BBE4C74270F96170038C5DF /* Data */,
 				4BC4055926F5453F002BA1FB /* ContentView.swift */,
@@ -235,6 +242,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 4BC4054B26F5453F002BA1FB;
 			packageReferences = (
@@ -255,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1820B62777F46900882736 /* dataPrivacyAnimation.json in Resources */,
+				4BC6BB44277F9B3300F2231E /* Localizable.strings in Resources */,
 				4BC4055F26F54540002BA1FB /* Preview Assets.xcassets in Resources */,
 				4B1820B82777F6D200882736 /* notificationAnimation.json in Resources */,
 				4B1820B02777BD5700882736 /* birthdayAnimation.json in Resources */,
@@ -281,6 +290,7 @@
 				4B3E6E6D2773F8C7006C60D0 /* PersistenceController.swift in Sources */,
 				4B1820AE2777B8DE00882736 /* LottieView.swift in Sources */,
 				4BBE071B27176F9E003AE083 /* isBirthdayToday.swift in Sources */,
+				4B10FF14277FE3F5003889B9 /* LocalizationExtension.swift in Sources */,
 				4BBE071927176D48003AE083 /* daysTillBirthday.swift in Sources */,
 				4B3E6E732774072C006C60D0 /* BirthdayDetailView.swift in Sources */,
 				4BE33F8E27792FB500184B29 /* SettingsListItemView.swift in Sources */,
@@ -290,6 +300,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4BC6BB46277F9B3300F2231E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BC6BB45277F9B3300F2231E /* en */,
+				4BC6BB47277F9B3500F2231E /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4BC4056126F54540002BA1FB /* Debug */ = {
