@@ -28,7 +28,7 @@ struct HomeView: View {
                         if(birthdays.isEmpty){
                             VStack{
                                 LottieView(filename: "birthdayAnimation", loop: true).frame(height: 300, alignment: .center)
-                                Text("Bitte wähle einen Geburtstag aus der Navigationsleiste aus".localized())
+                                Text("Nothing here yet. Click on the \"+\" to add a birthday.".localized())
                                     .foregroundColor(.secondary)
                                     .multilineTextAlignment(.center)
                                     .padding()
