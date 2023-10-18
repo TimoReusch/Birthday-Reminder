@@ -9,7 +9,8 @@ import SwiftUI
 
 struct BirthdayDetailView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
     
     @State var name: String
     @State var date: Date

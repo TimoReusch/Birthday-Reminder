@@ -89,7 +89,6 @@ struct HomeView: View {
                 }
                 // Only shown on iPad and macOS
                 Text("Please select a birthday from the navigation bar".localized())
-                    .font(.title)
                     .foregroundColor(.secondary)
             }
             .searchable(text: $searchQuery, prompt: "Search for name".localized())

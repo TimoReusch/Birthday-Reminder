@@ -20,14 +20,13 @@ struct LegalView: View {
 """
     **Angaben gemäß § 5 TMG**
     Timo Reusch
-    <Adresse>
 
     Vertreten durch:
     Timo Reusch
 
     **Kontakt:**
-    Telefon: <Telefonnummer>
-    E-Mail: mail@timo-reusch.de
+    Telefon: <Tel>
+    E-Mail: <Mail>
 
     
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Timo Reusch, Anschrift wie oben.
